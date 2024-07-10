@@ -242,7 +242,7 @@ void House::setAccessList(uint32_t listId, const std::string &textlist) {
 			for (int32_t i = creatures->size(); --i >= 0;) {
 				std::shared_ptr<Player> player = (*creatures)[i]->getPlayer();
 				if (player && !isInvited(player)) {
-					kickPlayer(nullptr, player);
+					//kickPlayer(nullptr, player);
 				}
 			}
 		}

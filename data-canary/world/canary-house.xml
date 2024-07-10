@@ -1,4 +1,5 @@
 <?xml version="1.0"?>
 <houses>
-	<house name="NPC" houseid="1" entryx="19977" entryy="19988" entryz="7" rent="0" townid="3" size="15" />
+	<house name="" houseid="1" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="18" clientid="0" beds="0" />
+	<house name="Teste house" houseid="2" entryx="5016" entryy="5001" entryz="7" rent="0" townid="1" size="81" clientid="1" beds="0" />
 </houses>
