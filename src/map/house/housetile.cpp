@@ -81,7 +81,7 @@ ReturnValue HouseTile::queryAdd(int32_t index, const std::shared_ptr<Thing> &thi
 }
 
 std::shared_ptr<Cylinder> HouseTile::queryDestination(int32_t &index, const std::shared_ptr<Thing> &thing, std::shared_ptr<Item>* destItem, uint32_t &tileFlags) {
-	if (std::shared_ptr<Creature> creature = thing->getCreature()) {
+	/*if (std::shared_ptr<Creature> creature = thing->getCreature()) {
 		if (std::shared_ptr<Player> player = creature->getPlayer()) {
 			if (!house->isInvited(player)) {
 				const Position &entryPos = house->getEntryPosition();
@@ -102,7 +102,7 @@ std::shared_ptr<Cylinder> HouseTile::queryDestination(int32_t &index, const std:
 				return destTile;
 			}
 		}
-	}
+	}*/
 
 	return Tile::queryDestination(index, thing, destItem, tileFlags);
 }
