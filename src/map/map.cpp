@@ -235,7 +235,7 @@ bool Map::placeCreature(const Position &centerPos, std::shared_ptr<Creature> cre
 	if (tile) {
 		placeInPZ = tile->hasFlag(TILESTATE_PROTECTIONZONE);
 		ReturnValue ret = tile->queryAdd(0, creature, 1, FLAG_IGNOREBLOCKITEM | FLAG_IGNOREFIELDDAMAGE);
-		foundTile = forceLogin || ret == RETURNVALUE_NOERROR || ret == RETURNVALUE_PLAYERISNOTINVITED;
+		foundTile = forceLogin || ret == RETURNVALUE_NOERROR;
 		if (monster) {
 			monster->ignoreFieldDamage = false;
 		}

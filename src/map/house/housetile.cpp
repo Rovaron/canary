@@ -62,15 +62,8 @@ void HouseTile::updateHouse(std::shared_ptr<Item> item) {
 
 ReturnValue HouseTile::queryAdd(int32_t index, const std::shared_ptr<Thing> &thing, uint32_t count, uint32_t tileFlags, std::shared_ptr<Creature> actor /* = nullptr*/) {
 	if (std::shared_ptr<Creature> creature = thing->getCreature()) {
-		if (std::shared_ptr<Player> player = creature->getPlayer()) {
-			if (!house->isInvited(player)) {
-				return RETURNVALUE_PLAYERISNOTINVITED;
-			}
-		} else if (std::shared_ptr<Monster> monster = creature->getMonster()) {
+		if (std::shared_ptr<Monster> monster = creature->getMonster()) {
 			if (monster->isSummon()) {
-				if (!house->isInvited(monster->getMaster()->getPlayer())) {
-					return RETURNVALUE_NOTPOSSIBLE;
-				}
 				if (house->isInvited(monster->getMaster()->getPlayer()) && (hasFlag(TILESTATE_BLOCKSOLID) || (hasBitSet(FLAG_PATHFINDING, flags) && hasFlag(TILESTATE_NOFIELDBLOCKPATH)))) {
 					return RETURNVALUE_NOTPOSSIBLE;
 				} else {
